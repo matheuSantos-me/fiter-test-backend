@@ -1,4 +1,6 @@
-const { prisma } = require('../database/db');
+const { PrismaClient } = require("@prisma/client");
+
+const prisma = new PrismaClient();
 
 const DEFAULT_PAGE = 1;
 const DEFAULT_LIMIT = 5;
@@ -10,9 +12,10 @@ const findAll = async (page = DEFAULT_PAGE, limit = DEFAULT_LIMIT) => {
   const [data, total] = await Promise.all([
     prisma.book.findMany({
       skip,
-      take: limit,
+      take: Number(limit),
       orderBy: { createdAt: 'desc' },
     }),
+
     prisma.book.count(),
   ]);
 
@@ -34,7 +37,7 @@ const searchByText = async (text = '') => {
       OR: [
         { name: { contains: text, mode: 'insensitive' } },
         { description: { contains: text, mode: 'insensitive' } },
-        { authors: { hasSome: [text] } }, // busca no array de autores
+        { authors: { hasSome: [text] } }, 
       ],
     },
     take: DEFAULT_SEARCH_LIMIT,
