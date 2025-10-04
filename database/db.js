@@ -18,7 +18,7 @@ async function main() {
       description:
         "Dystopian novel depicting a totalitarian society and the consequences of government overreach.",
       imageLink:
-        "https://m.media-amazon.com/images/I/615Z8aLlDXL._AC_SL1500_.jpg",
+        "https://m.media-amazon.com/images/I/615Z8aLlDXL._AC_SL1500_.jpg]",
       publishedAt: new Date("1949-06-08"),
     },
     {
@@ -26,7 +26,7 @@ async function main() {
       authors: ["F. Scott Fitzgerald"],
       description:
         "A tale of wealth, love, and the American Dream set in the Roaring Twenties.",
-      imageLink: "https://m.media-amazon.com/images/I/819wCzUTZWL._SL1500_.jpg",
+      imageLink: "https://m.media-amazon.com/images/I/819wCzUTZWL._SL1500_.jpg]",
       publishedAt: new Date("1925-04-10"),
     },
     {
